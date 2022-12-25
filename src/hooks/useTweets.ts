@@ -8,6 +8,8 @@ const containerSchema = {
     initialObjects: { sharedTweets: SharedMap }
 }
 
+const tweetsKey = "tweets"
+
 const getFluidData = async () => {
     let container: IFluidContainer;
     // eslint-disable-next-line
@@ -38,10 +40,7 @@ export const useTweets = (): [ITweet[], (tweetBody: Pick<ITweet, "text" | "user"
         if(sharedObject) {
             // TODO 4: Set the value of the localTimestamp state object that will appear in the UI.
             const updateTweets = () => {
-                console.log("updating tweets shared object");
-                
-                setTweets(sharedObject.get("tweets"))
-                console.log(sharedObject.get("tweets"));
+                setTweets(sharedObject.get(tweetsKey))
             };
             updateTweets();
             
@@ -62,10 +61,10 @@ export const useTweets = (): [ITweet[], (tweetBody: Pick<ITweet, "text" | "user"
             time: Date.now()
         }
         if (tweets) {
-            sharedObject.set("tweets", [tweet, ...tweets]);
+            sharedObject.set(tweetsKey, [tweet, ...tweets]);
         }
         else {
-            sharedObject.set("tweets", [tweet])
+            sharedObject.set(tweetsKey, [tweet])
         }
     }
 

@@ -3,3 +3,7 @@ export interface ITweet {
     user: string,
     text: string
 }
+
+export interface IUser {
+    name: string
+}

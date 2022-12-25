@@ -1,0 +1,55 @@
+html {
+    background-color: #315e26;
+}
+
+#tweets-dashboard-pane {
+    width: 80%;
+    margin: auto;
+}
+
+#new-user-view {
+    text-align: center;
+}
+
+#new-tweet-prompt {
+    text-align: center;
+}
+
+#tweet-prompt {
+    height: 5em;
+    display: block;
+    margin: auto;
+    text-align: left;
+    margin: 0 0 1em 0;
+    padding-left: 2em;
+    padding-right: 2em;
+    min-width: -webkit-fill-available;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+#tweet-submit {
+    width: 10%;
+    float: right;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.tweet {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    background-color: #acd1af;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    animation: tweet-appear 0.5s ease-in;
+}
+
+.tweet-time {
+    text-align-last: right;
+}
+
+@keyframes tweet-appear {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+  }
